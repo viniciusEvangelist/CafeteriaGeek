@@ -70,14 +70,18 @@ public class Main {
         // a venda prossegue automaticamente como cliente casual (sem beneficios).
         String cpfInformado = "000.000.000-00";
         Cliente clienteResolvido = cadastroCliente.pesquisarPorCpf(cpfInformado);
-        Pedido pedidoPorCpf = (clienteResolvido != null)
-                ? new Pedido(clienteResolvido, atendenteAlice)
-                : new Pedido(atendenteAlice);
+        Pedido pedidoPorCpf;
+        if (clienteResolvido != null) {
+            pedidoPorCpf = new Pedido(clienteResolvido, atendenteAlice);
+        } 
+        else {
+            pedidoPorCpf = new Pedido(atendenteAlice);
+        }
         cadastroPedido.cadastrar(pedidoPorCpf);
         pedidoPorCpf.adicionarItem(portalCake, 1);
         pedidoPorCpf.finalizar();
         System.out.println("CPF " + cpfInformado + " nao cadastrado -> pedido " + pedidoPorCpf.getNumero() + " tratado como cliente casual.");
-
+       
         System.out.println("=== PRODUTOS ===");
         for (Produto p : cadastroProduto.listar()) {
             System.out.println(p);
