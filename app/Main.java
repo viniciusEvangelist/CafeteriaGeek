@@ -18,9 +18,9 @@ public class Main {
         cadastroProduto.cadastrar(burguerVegano);
         cadastroProduto.cadastrar(cafeProgramador);
         cadastroProduto.cadastrar(pocaoMana);
-        ClienteStandard cliente1 = new ClienteStandard("Lucas", "069.770.091-79");
-        ClienteStandard cliente2 = new ClienteStandard("Tiago", "041.264.141-00");
-        ClienteVIP cliente3 = new ClienteVIP("Geovanna", "033.201.411-80");
+        ClienteStandard cliente1 = new ClienteStandard("Lucas", "068.000.000-00");
+        ClienteStandard cliente2 = new ClienteStandard("Tiago", "041.000.000-00");
+        ClienteVIP cliente3 = new ClienteVIP("Geovanna", "033.000.000-00");
         cadastroCliente.cadastrar(cliente1);
         cadastroCliente.cadastrar(cliente2);
         cadastroCliente.cadastrar(cliente3);
